@@ -13,7 +13,14 @@ export default function Page() {
   const loadingPercentage = Math.round(loadingProgression * 100);
 
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{
+        maxWidth: "100vw",
+        maxHeight: "100vh",
+        overflow: "hidden",
+      }}
+    >
       {isLoaded === false && (
         // We'll conditionally render the loading overlay if the Unity
         // Application is not loaded.
