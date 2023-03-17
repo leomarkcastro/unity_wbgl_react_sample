@@ -17,8 +17,12 @@ export default function Page() {
       className="container"
       style={{
         maxWidth: "100vw",
-        maxHeight: "100vh",
         overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "white",
       }}
     >
       {isLoaded === false && (
@@ -26,11 +30,9 @@ export default function Page() {
         // Application is not loaded.
         <div
           style={{
-            width: "100vw",
+            aspectRatio: "9/16",
             height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            margin: "auto",
           }}
         >
           <LoadingBar loadingPercentage={loadingPercentage}></LoadingBar>
@@ -40,7 +42,7 @@ export default function Page() {
         unityProvider={unityProvider}
         matchWebGLToCanvasSize={true}
         style={{
-          width: "100vw",
+          aspectRatio: "9/16",
           height: "100vh",
         }}
       />

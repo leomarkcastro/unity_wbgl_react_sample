@@ -10,15 +10,16 @@ export default function LoadingBar({
         width: "80%",
         height: "50px",
         backgroundColor: "transparent",
-        border: "1px solid gray",
+        border: "1px solid lightblue",
         padding: "10px",
+        margin: "auto",
       }}
     >
       <div
         style={{
           width: `${loadingPercentage}%`,
           height: "100%",
-          backgroundColor: "white",
+          backgroundColor: "blue",
         }}
       ></div>
     </div>
