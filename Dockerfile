@@ -19,10 +19,13 @@ RUN yarn build:static
 # nginx state for serving content
 FROM nginx:alpine
 
+# Copy static assets from builder stage
+WORKDIR /www
+COPY --from=builder /build/out/ .
+
 # Copy nginx config
 WORKDIR /etc/nginx/conf.d
 COPY webgl.conf default.conf
 
-# Copy static assets from builder stage
+# Go back to static files window
 WORKDIR /www
-COPY --from=builder /build/out/ .
