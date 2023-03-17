@@ -6,10 +6,13 @@
 FROM node:16 AS builder
 # Set working directory
 WORKDIR /build
-# Copy all files from current directory to working dir in image
-COPY . .
+COPY package.json yarn.lock ./
 # install node modules and build assets
 RUN yarn
+# Copy all files from current directory to working dir in image
+COPY src/ src/
+COPY public/ public/
+COPY tsconfig.json ./
 RUN yarn build:static
 
 
